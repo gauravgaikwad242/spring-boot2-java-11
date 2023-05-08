@@ -1,12 +1,12 @@
 schemaVersion: 2.1.0
 metadata:
-  name: springboot2-template-theia
-  generateName: springboot2-template-theia
+  name: springboot2-template-theiaplug
+  generateName: springboot2-template-theiaplug
 projects:
-  - name: springboot2-template-theia
+  - name: springboot2-template-theiaplug
     git:
       checkoutFrom:
-        revision: theia
+        revision: theia-plugin
       remotes:
         origin: https://github.com/gauravgaikwad242/spring-boot2-java-11
 attributes:  
@@ -61,7 +61,7 @@ commands:
     exec:
       label: "Package"
       component: tools
-      workingDir: ${PROJECTS_ROOT}/springboot2-template-theia
+      workingDir: ${PROJECTS_ROOT}/springboot2-template-theiaplug
       commandLine: "mvn clean package -DskipTests=true"
       group:
         kind: build
@@ -70,7 +70,7 @@ commands:
     exec:
       label: "clean"
       component: tools
-      workingDir: ${PROJECTS_ROOT}/springboot2-template-theia
+      workingDir: ${PROJECTS_ROOT}/springboot2-template-theiaplug
       commandLine: "mvn clean -DskipTests=true"
       group:
         kind: build
