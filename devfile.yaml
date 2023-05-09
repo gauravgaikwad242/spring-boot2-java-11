@@ -1,12 +1,12 @@
 schemaVersion: 2.1.0
 metadata:
-  name: springboot2-template-theiaplug
-  generateName: springboot2-template-theiaplug
+  name: springboot2-template-extonly
+  generateName: springboot2-template-extonly
 projects:
-  - name: springboot2-template-theiaplug
+  - name: springboot2-template-extonly
     git:
       checkoutFrom:
-        revision: theia-plugin
+        revision: extension
       remotes:
         origin: https://github.com/gauravgaikwad242/spring-boot2-java-11
 attributes:  
@@ -69,7 +69,7 @@ commands:
     exec:
       label: "Package"
       component: tools
-      workingDir: ${PROJECTS_ROOT}/springboot2-template-theiaplug
+      workingDir: ${PROJECTS_ROOT}/springboot2-template-extonly
       commandLine: "mvn clean package -DskipTests=true"
       group:
         kind: build
@@ -78,7 +78,7 @@ commands:
     exec:
       label: "run app in development mode"
       component: tools
-      workingDir: ${PROJECTS_ROOT}/springboot2-template-theiaplug
+      workingDir: ${PROJECTS_ROOT}/springboot2-template-extonly
       commandLine: "mvn spring-boot:run"
       group:
         kind: build
@@ -87,7 +87,7 @@ commands:
     exec:
       label: "clean"
       component: tools
-      workingDir: ${PROJECTS_ROOT}/springboot2-template-theiaplug
+      workingDir: ${PROJECTS_ROOT}/springboot2-template-extonly
       commandLine: "mvn clean -DskipTests=true"
       group:
         kind: build
