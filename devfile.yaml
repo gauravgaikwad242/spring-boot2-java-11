@@ -12,7 +12,7 @@ projects:
 attributes:  
   controller.devfile.io/storage-type: ephemeral
   .che/che-theia-plugins.yaml: |
-    - id: vscjava/vscode-java-pack
+    - id: redhat/java
   .vscode/extensions: |
     {  
       "recommendations": [  
