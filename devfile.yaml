@@ -24,10 +24,10 @@ components:
           protocol: tcp
           targetPort: 5005
         - exposure: public
-          name: list-all-food
+          name: root-controller
           protocol: http
           targetPort: 8080
-          path: /food
+          path: /home
       volumeMounts:
         - name: m2
           path: /home/user/.m2
@@ -63,6 +63,15 @@ commands:
       component: tools
       workingDir: ${PROJECTS_ROOT}/springboot2-template-theiaplug
       commandLine: "mvn clean package -DskipTests=true"
+      group:
+        kind: build
+        isDefault: true
+  - id: run
+    exec:
+      label: "run app in development mode"
+      component: tools
+      workingDir: ${PROJECTS_ROOT}/springboot2-template-theiaplug
+      commandLine: "mvn spring-boot:run"
       group:
         kind: build
         isDefault: true
