@@ -11,11 +11,25 @@ projects:
         origin: https://github.com/gauravgaikwad242/spring-boot2-java-11
 attributes:  
   controller.devfile.io/storage-type: ephemeral
-  .che/che-editor.yaml: |
-    id: eclipse/che-theia/latest
   .che/che-theia-plugins.yaml: |
     - id: redhat/java
 components:
+  - container:
+      image: 'quay.io/eclipse/che-theia:latest'
+      sourceMapping: /projects
+      command:
+        - tail
+        - '-f'
+        - /dev/null
+      env:
+        - name: THEIA_HOST
+          value: 0.0.0.0
+        - name: THEIA_PORT
+          value: '3130'
+        - name: NODE_TLS_REJECT_UNAUTHORIZED
+          value: '0'
+      mountSources: true
+    name: che-theia-latest-prod
   - name: tools
     container:
       image: quay.io/devfile/universal-developer-image:ubi8-latest
