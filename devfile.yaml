@@ -12,7 +12,9 @@ projects:
 attributes:  
   controller.devfile.io/storage-type: ephemeral
   .che/che-editor.yaml: |
-    - id: eclipse/che-theia/latest
+    id: eclipse/che-theia/latest
+  .che/che-theia-plugins.yaml: |
+    - id: redhat/java
 components:
   - name: tools
     container:
